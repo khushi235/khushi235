@@ -13,14 +13,6 @@
 </div>
 
 <div align="center">
-  <img src="https://img.shields.io/badge/New%20York-%F0%9F%97%BD-5b8cff?style=flat-square&labelColor=0a0d16" alt="Based in New York" />
-  &nbsp;
-  <img src="https://img.shields.io/badge/NYIT-%F0%9F%8E%93-37e0a6?style=flat-square&labelColor=0a0d16" alt="New York Institute of Technology" />
-</div>
-
-<br />
-
-<div align="center">
   <h2>💎 About Me</h2>
 </div>
 

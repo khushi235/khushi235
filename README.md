@@ -13,16 +13,6 @@
 </div>
 
 <div align="center">
-  <img src="https://img.shields.io/badge/Data%20Analyst-%F0%9F%92%8E-8fe3ff?style=flat-square&labelColor=0a0d16" alt="Data Analyst" />
-  &nbsp;
-  <img src="https://img.shields.io/badge/Jersey%20City%2C%20NJ-%F0%9F%97%BD-5b8cff?style=flat-square&labelColor=0a0d16" alt="Based in Jersey City, NJ" />
-  &nbsp;
-  <img src="https://img.shields.io/badge/M.S.%20Computer%20Science-NYIT-37e0a6?style=flat-square&labelColor=0a0d16" alt="M.S. Computer Science, NYIT" />
-</div>
-
-<br />
-
-<div align="center">
   <h2>💎 About Me</h2>
 </div>
 
@@ -51,8 +41,6 @@
 <div align="center">
   <img src="./assets/trophies.svg" width="850" alt="GitHub milestones" />
 </div>
-
-<br />
 
 <div align="center">
   <h2>🛠️ Tools &amp; Technologies</h2>
@@ -99,8 +87,6 @@
 - 🎓 &nbsp;**Placement Management System** · *AngularJS · Node.js · MySQL* — a three-portal university placement platform for admins, students, and companies.
 - 🏨 &nbsp;**Hotel Management System** · *React · Node.js · MongoDB* — full-stack operations platform with real-time room status and role-based access.
 - 📈 &nbsp;**Data Quality Monitoring &amp; Automated Reporting** · *Excel · Power Automate · Tableau* — automated data-quality tracking that cut manual effort **40%**.
-
-<br />
 
 <div align="center">
   <h2>📫 Let's Connect</h2>

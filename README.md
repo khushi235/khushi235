@@ -9,7 +9,7 @@
 </div>
 
 <div align="center">
-  <img src="./assets/subtitle.svg" alt="Data Analyst · Diamond-Industry Data · Power BI, Tableau, SQL · Full-Stack Developer" />
+  <img src="./assets/subtitle.svg" alt="Data Analyst · Power BI, Tableau, SQL · Full-Stack Developer" />
 </div>
 
 <div align="center">

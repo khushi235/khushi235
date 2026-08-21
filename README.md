@@ -16,7 +16,7 @@
   <h2>💎 About Me</h2>
 </div>
 
-- 💠 &nbsp;**Full-stack web developer** who cut her teeth building fast, polished interfaces for the **diamond &amp; jewellery industry** — turning intricate catalogues into brilliant web experiences.
+- 💠 &nbsp;**Full-stack web developer** turning intricate catalogues into brilliant web experiences.
 - 📚 &nbsp;Began my journey in **education**, so I care deeply about clarity, mentoring, and making the complex feel simple.
 - 🎓 &nbsp;Currently at the **New York Institute of Technology**, New York.
 - ⚡ &nbsp;I build with **JavaScript, React &amp; Node** — clean, accessible, responsive UI is my craft.

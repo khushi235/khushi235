@@ -35,9 +35,7 @@
 <div align="center">
   <h2>💠 GitHub Brilliance</h2>
   <br />
-  <img src="./assets/stats.svg" width="420" alt="Khushi's GitHub statistics" />
-  &nbsp;
-  <img src="./assets/languages.svg" width="420" alt="Most used languages" />
+  <img src="./assets/overview.svg" width="850" alt="Khushi's GitHub statistics and most used languages" />
 </div>
 
 <div align="center">

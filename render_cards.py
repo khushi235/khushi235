@@ -521,6 +521,21 @@ def render_langs(d):
     return "".join(parts)
 
 
+def render_overview(d):
+    """Stats and languages composed into ONE image so they always sit side by
+    side (scaling together) instead of wrapping on the narrow profile column."""
+    cardw, gap, h = 480, 16, 232
+
+    def inner(svg):
+        return svg[svg.index('>') + 1:svg.rindex('</svg>')]
+
+    parts = [svg_open(cardw * 2 + gap, h)]
+    parts.append(f'<g>{inner(render_stats(d))}</g>')
+    parts.append(f'<g transform="translate({cardw + gap},0)">{inner(render_langs(d))}</g>')
+    parts.append('</svg>')
+    return "".join(parts)
+
+
 def _range_label(rng_tuple):
     a, b = rng_tuple
     if not a or not b:
@@ -893,8 +908,7 @@ def render_footer(d):
 CARDS = [
     ("header.svg", render_header),
     ("subtitle.svg", render_subtitle),
-    ("stats.svg", render_stats),
-    ("languages.svg", render_langs),
+    ("overview.svg", render_overview),
     ("streak.svg", render_streak),
     ("activity.svg", render_activity),
     ("trophies.svg", render_trophies),

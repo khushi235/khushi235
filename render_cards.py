@@ -58,6 +58,7 @@ LANG_COLORS = {
     "C++": AMET, "C#": EMER, "Shell": EMER, "EJS": GOLD, "Vue": EMER,
     "PHP": SAPP, "Ruby": RUBY, "Go": ICE, "Rust": GOLD, "Dart": SAPP,
     "Kotlin": AMET, "Swift": RUBY, "Handlebars": GOLD, "Pug": RUBY,
+    "Other": SILV,
 }
 # Languages whose byte counts wildly skew the picture (embedded output, etc.).
 IGNORE_LANGS = {"Jupyter Notebook"}
@@ -87,6 +88,21 @@ def fmt(n):
     if n >= 1000:
         return f"{n / 1000:.1f}k".replace(".0k", "k")
     return str(n)
+
+
+def largest_remainder(values, total, decimals=1):
+    """Round each value to a percentage of total so the set sums to EXACTLY 100
+    (largest remainder method) — no 99.9% / 100.1% drift on the card."""
+    scale = 10 ** decimals
+    if total <= 0:
+        return [0.0] * len(values)
+    raw = [v * 100 * scale / total for v in values]
+    floors = [int(math.floor(x)) for x in raw]
+    deficit = int(round(sum(raw))) - sum(floors)
+    order = sorted(range(len(values)), key=lambda i: raw[i] - floors[i], reverse=True)
+    for k in range(max(deficit, 0)):
+        floors[order[k % len(order)]] += 1
+    return [f / scale for f in floors]
 
 
 def rng(seed):
@@ -275,15 +291,17 @@ def fetch():
 
     total = sum(lang_bytes.values()) or 1
     ranked = sorted(lang_bytes.items(), key=lambda x: -x[1])
-    langs = []
-    for name, v in ranked:
-        pct = round(v * 100 / total, 1)
-        if pct < 0.1:  # skip languages that would just render as "0%"
-            continue
-        langs.append((name, pct, lang_color(name, len(langs))))
-        if len(langs) >= 6:
-            break
-    d["langs"] = langs
+    if len(ranked) > 5:
+        head = ranked[:5]
+        other_bytes = total - sum(b for _, b in head)
+        entries = [(n, b) for n, b in head] + [("Other", other_bytes)]
+    else:
+        entries = [(n, b) for n, b in ranked]
+    pcts = largest_remainder([b for _, b in entries], total)
+    combined = sorted(((entries[i][0], pcts[i]) for i in range(len(entries))),
+                      key=lambda x: -x[1])
+    d["langs"] = [(name, pct, lang_color(name, i))
+                  for i, (name, pct) in enumerate(combined)]
 
     # Contribution history via GraphQL, one <=1yr window per calendar year.
     days = {}

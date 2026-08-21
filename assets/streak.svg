@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="200" viewBox="0 0 900 200" role="img" font-family="'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif">
+  <defs>
+    <linearGradient id="kbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#121a2e"/>
+      <stop offset="0.55" stop-color="#0a0d16"/>
+      <stop offset="1" stop-color="#121a2e"/>
+    </linearGradient>
+    <linearGradient id="kedge" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8fe3ff"/>
+      <stop offset="0.5" stop-color="#5b8cff"/>
+      <stop offset="1" stop-color="#b98cff"/>
+    </linearGradient>
+    <linearGradient id="kice" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#dcf5ff"/>
+      <stop offset="1" stop-color="#8fe3ff"/>
+    </linearGradient>
+    <linearGradient id="kshine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#ffffff" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="kglow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2.4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="kclip"><rect x="1" y="1" width="898" height="198" rx="18"/></clipPath>
+  </defs>
+  <rect x="1" y="1" width="898" height="198" rx="18" fill="url(#kbg)"/>
+  <g clip-path="url(#kclip)">
+    <g><path transform="translate(824.8 150.5)" d="M0,-3.5 Q0,0 3.5,0 Q0,0 0,3.5 Q0,0 -3.5,0 Q0,0 0,-3.5 Z" fill="#8fe3ff" opacity="0"><animate attributeName="opacity" values="0;0.95;0" dur="3.10s" begin="0.52s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="scale" additive="sum" values="0.4;1;0.4" dur="3.10s" begin="0.52s" repeatCount="indefinite"/></path><path transform="translate(734.8 27.6)" d="M0,-5.3 Q0,0 5.3,0 Q0,0 0,5.3 Q0,0 -5.3,0 Q0,0 0,-5.3 Z" fill="#dcf5ff" opacity="0"><animate attributeName="opacity" values="0;0.95;0" dur="2.87s" begin="0.50s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="scale" additive="sum" values="0.4;1;0.4" dur="2.87s" begin="0.50s" repeatCount="indefinite"/></path><path transform="translate(341.3 67.6)" d="M0,-3.4 Q0,0 3.4,0 Q0,0 0,3.4 Q0,0 -3.4,0 Q0,0 0,-3.4 Z" fill="#dcf5ff" opacity="0"><animate attributeName="opacity" values="0;0.95;0" dur="3.53s" begin="0.54s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="scale" additive="sum" values="0.4;1;0.4" dur="3.53s" begin="0.54s" repeatCount="indefinite"/></path><path transform="translate(805.5 31.5)" d="M0,-2.1 Q0,0 2.1,0 Q0,0 0,2.1 Q0,0 -2.1,0 Q0,0 0,-2.1 Z" fill="#37e0a6" opacity="0"><animate attributeName="opacity" values="0;0.95;0" dur="4.59s" begin="0.05s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="scale" additive="sum" values="0.4;1;0.4" dur="4.59s" begin="0.05s" repeatCount="indefinite"/></path><path transform="translate(665.1 50.1)" d="M0,-3.0 Q0,0 3.0,0 Q0,0 0,3.0 Q0,0 -3.0,0 Q0,0 0,-3.0 Z" fill="#dcf5ff" opacity="0"><animate attributeName="opacity" values="0;0.95;0" dur="2.95s" begin="1.11s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="scale" additive="sum" values="0.4;1;0.4" dur="2.95s" begin="1.11s" repeatCount="indefinite"/></path><path transform="translate(504.7 142.8)" d="M0,-2.6 Q0,0 2.6,0 Q0,0 0,2.6 Q0,0 -2.6,0 Q0,0 0,-2.6 Z" fill="#dcf5ff" opacity="0"><animate attributeName="opacity" values="0;0.95;0" dur="3.92s" begin="0.49s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="scale" additive="sum" values="0.4;1;0.4" dur="3.92s" begin="0.49s" repeatCount="indefinite"/></path><path transform="translate(368.1 98.3)" d="M0,-4.2 Q0,0 4.2,0 Q0,0 0,4.2 Q0,0 -4.2,0 Q0,0 0,-4.2 Z" fill="#c9d3ea" opacity="0"><animate attributeName="opacity" values="0;0.95;0" dur="4.96s" begin="0.42s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="scale" additive="sum" values="0.4;1;0.4" dur="4.96s" begin="0.42s" repeatCount="indefinite"/></path><path transform="translate(314.7 118.9)" d="M0,-2.4 Q0,0 2.4,0 Q0,0 0,2.4 Q0,0 -2.4,0 Q0,0 0,-2.4 Z" fill="#dcf5ff" opacity="0"><animate attributeName="opacity" values="0;0.95;0" dur="4.24s" begin="0.77s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="scale" additive="sum" values="0.4;1;0.4" dur="4.24s" begin="0.77s" repeatCount="indefinite"/></path><path transform="translate(359.9 52.0)" d="M0,-2.7 Q0,0 2.7,0 Q0,0 0,2.7 Q0,0 -2.7,0 Q0,0 0,-2.7 Z" fill="#dcf5ff" opacity="0"><animate attributeName="opacity" values="0;0.95;0" dur="4.67s" begin="2.67s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="scale" additive="sum" values="0.4;1;0.4" dur="4.67s" begin="2.67s" repeatCount="indefinite"/></path></g>
+    <rect x="-200" y="0" width="280" height="200" fill="url(#kshine)"
+          opacity="0.10" transform="skewX(-18)">
+      <animateTransform attributeName="transform" type="translate" additive="sum"
+        from="-200 0" to="1100 0" dur="7s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+  <rect x="1.5" y="1.5" width="897" height="197" rx="17" fill="none"
+        stroke="url(#kedge)" stroke-width="1.5" opacity="0.9"/><text x="150" y="98" font-size="30" font-weight="800" fill="#8fe3ff" text-anchor="middle">16</text><path d="M150.0,39.0 L155.7,44.7 L150.0,53.0 L144.3,44.7 Z" fill="#8fe3ff" /><text x="150" y="150" font-size="13.5" font-weight="700" fill="#eef1f8" text-anchor="middle">Total Contributions</text><text x="150" y="170" font-size="10.5" fill="#95a2c0" text-anchor="middle">Oct 18 – Aug 21, 2026</text><circle cx="450" cy="92" r="40" fill="none" stroke="#1b2440" stroke-width="5"/><circle cx="450" cy="92" r="40" fill="none" stroke="#ffd479" stroke-width="5" stroke-linecap="round" stroke-dasharray="200 251" transform="rotate(-90 450 92)"><animateTransform attributeName="transform" type="rotate" from="-90 450 92" to="270 450 92" dur="9s" repeatCount="indefinite"/></circle><text x="450" y="102" font-size="34" font-weight="800" fill="#eef1f8" text-anchor="middle" filter="url(#kglow)">0</text><path d="M450.0,31.0 L457.4,38.4 L450.0,49.0 L442.6,38.4 Z" fill="url(#kice)" filter="url(#kglow)"/><text x="450" y="150" font-size="13.5" font-weight="700" fill="#eef1f8" text-anchor="middle">Current Streak</text><text x="450" y="170" font-size="10.5" fill="#95a2c0" text-anchor="middle">—</text><text x="750" y="98" font-size="30" font-weight="800" fill="#b98cff" text-anchor="middle">1</text><path d="M750.0,39.0 L755.7,44.7 L750.0,53.0 L744.3,44.7 Z" fill="#b98cff" /><text x="750" y="150" font-size="13.5" font-weight="700" fill="#eef1f8" text-anchor="middle">Longest Streak</text><text x="750" y="170" font-size="10.5" fill="#95a2c0" text-anchor="middle">Oct 18, 2019</text><path d="M300.0,87.0 L304.1,91.1 L300.0,97.0 L295.9,91.1 Z" fill="#c9d3ea" opacity="0.5"/><path d="M600.0,87.0 L604.1,91.1 L600.0,97.0 L595.9,91.1 Z" fill="#c9d3ea" opacity="0.5"/></svg>

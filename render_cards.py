@@ -816,7 +816,6 @@ def render_header(d):
 def render_subtitle(d):
     phrases = [
         "Data Analyst",
-        "Diamond-Industry Data",
         "Power BI \u2022 Tableau \u2022 SQL",
         "Full-Stack Developer",
         "Exploring Agentic AI",
@@ -826,7 +825,7 @@ def render_subtitle(d):
     adv = fs * 0.60
     x0, base = 52, 40
     maxw = max(len(p) for p in phrases) * adv
-    w = int(x0 + maxw + 34)
+    w = int(x0 + maxw + 44)
     h = 60
     n = len(phrases)
     slot = 1.0 / n
@@ -850,23 +849,24 @@ def render_subtitle(d):
     parts.append(diamond(30, base - 8, 8, ICE))
     for i, p in enumerate(phrases):
         tw = len(p) * adv
+        cw = tw + 14  # reveal a little past the cursor so text never clips
         t0 = i * slot
         t_type = t0 + slot * 0.34
         t_hold = t0 + slot * 0.86
         t_end = t0 + slot * 1.0
         kt = [0, t0, t_type, t_hold, t_end, 1]
-        vals = [0, 0, tw, tw, 0, 0]
+        vals = [0, 0, cw, cw, 0, 0]
         cid = f"clip{i}"
         kt_s = ";".join(f"{k:.4f}" for k in kt)
         vals_s = ";".join(f"{v:.1f}" for v in vals)
-        parts.append(f'<clipPath id="{cid}"><rect x="{x0}" y="0" height="{h}" width="{tw if i == 0 else 0:.0f}">'
+        parts.append(f'<clipPath id="{cid}"><rect x="{x0}" y="0" height="{h}" width="{cw if i == 0 else 0:.0f}">'
                      f'<animate attributeName="width" values="{vals_s}" keyTimes="{kt_s}" '
                      f'dur="{T:.1f}s" repeatCount="indefinite"/></rect></clipPath>')
         parts.append(
             f'<g clip-path="url(#{cid})">'
             f'<text x="{x0}" y="{base}" font-size="{fs}" font-weight="700" '
             f'font-family="{MONO}" fill="{ICE2}">{esc(p)}</text>'
-            f'<rect x="{x0 + tw:.1f}" y="{base - fs + 4}" width="3" height="{fs}" fill="{GOLD}">'
+            f'<rect x="{x0 + tw + 3:.1f}" y="{base - fs + 4}" width="3" height="{fs}" fill="{GOLD}">'
             f'<animate attributeName="opacity" values="1;0;1" dur="0.9s" repeatCount="indefinite"/>'
             f'</rect></g>')
     parts.append('</svg>')

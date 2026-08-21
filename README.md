@@ -13,16 +13,6 @@
 </div>
 
 <div align="center">
-  <img src="https://komarev.com/ghpvc/?username=khushi235&label=Profile%20views&color=8fe3ff&style=flat-square" alt="Profile views" />
-  &nbsp;
-  <a href="https://github.com/khushi235?tab=followers">
-    <img src="https://img.shields.io/github/followers/khushi235?label=Followers&style=flat-square&color=b98cff&labelColor=0a0d16&logo=github" alt="Followers" />
-  </a>
-  &nbsp;
-  <a href="https://www.linkedin.com/in/khushi-shukla-ba2310212/">
-    <img src="https://img.shields.io/badge/LinkedIn-Khushi%20Shukla-5b8cff?style=flat-square&logo=linkedin&logoColor=white&labelColor=0a0d16" alt="LinkedIn" />
-  </a>
-  &nbsp;
   <img src="https://img.shields.io/badge/New%20York-%F0%9F%97%BD-5b8cff?style=flat-square&labelColor=0a0d16" alt="Based in New York" />
   &nbsp;
   <img src="https://img.shields.io/badge/NYIT-%F0%9F%8E%93-37e0a6?style=flat-square&labelColor=0a0d16" alt="New York Institute of Technology" />
@@ -78,6 +68,24 @@
   <img src="https://img.shields.io/badge/Express-c9d3ea?style=for-the-badge&logo=express&logoColor=0a0d16" alt="Express" />
   <img src="https://img.shields.io/badge/MongoDB-37e0a6?style=for-the-badge&logo=mongodb&logoColor=0a0d16" alt="MongoDB" />
   <img src="https://img.shields.io/badge/Git-ff6b93?style=for-the-badge&logo=git&logoColor=0a0d16" alt="Git" />
+</div>
+
+<br />
+
+<div align="center">
+  <h2>📫 Let's Connect</h2>
+</div>
+
+<div align="center">
+  <img src="https://komarev.com/ghpvc/?username=khushi235&label=Profile%20views&color=8fe3ff&style=flat-square" alt="Profile views" />
+  &nbsp;
+  <a href="https://github.com/khushi235?tab=followers">
+    <img src="https://img.shields.io/github/followers/khushi235?label=Followers&style=flat-square&color=b98cff&labelColor=0a0d16&logo=github" alt="Followers" />
+  </a>
+  &nbsp;
+  <a href="https://www.linkedin.com/in/khushi-shukla-ba2310212/">
+    <img src="https://img.shields.io/badge/LinkedIn-Khushi%20Shukla-5b8cff?style=flat-square&logo=linkedin&logoColor=white&labelColor=0a0d16" alt="LinkedIn" />
+  </a>
 </div>
 
 <br />

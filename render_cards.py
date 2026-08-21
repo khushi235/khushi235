@@ -63,7 +63,7 @@ LANG_COLORS = {
 IGNORE_LANGS = {"Jupyter Notebook"}
 
 FONT = "'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif"
-SERIF = "Georgia,'Times New Roman','Playfair Display',serif"
+ROUND = "'Segoe UI Rounded','SF Pro Rounded',ui-rounded,'Trebuchet MS',Verdana,'Segoe UI',system-ui,sans-serif"
 MONO = "ui-monospace,'Cascadia Code','JetBrains Mono','Courier New',monospace"
 
 
@@ -334,6 +334,29 @@ def diamond(cx, cy, s, fill, extra=""):
             f'L{cx - s * 0.82:.1f},{cy - s * 0.18:.1f} Z" fill="{fill}" {extra}/>')
 
 
+def faceted_gem(cx, cy, s, jewel):
+    """A brilliant-cut faceted gem (table + crown + pavilion) in a jewel tint."""
+    tw, cw, ch, pd = s * 0.5, s, s * 0.5, s * 1.3
+
+    def P(x, y):
+        return f"{cx + x:.1f},{cy + y:.1f}"
+
+    TL, TR = (-tw, -ch), (tw, -ch)
+    GL, GR = (-cw, 0.0), (cw, 0.0)
+    C, M, MT = (0.0, pd), (0.0, 0.0), (0.0, -ch)
+    return (
+        f'<g>'
+        f'<polygon points="{P(*TL)} {P(*TR)} {P(*GR)} {P(*C)} {P(*GL)}" fill="{jewel}"/>'
+        f'<polygon points="{P(*TL)} {P(*GL)} {P(*M)} {P(*MT)}" fill="#ffffff" opacity="0.34"/>'
+        f'<polygon points="{P(*TR)} {P(*GR)} {P(*M)} {P(*MT)}" fill="#ffffff" opacity="0.15"/>'
+        f'<polygon points="{P(*TL)} {P(*TR)} {P(*MT)}" fill="#ffffff" opacity="0.55"/>'
+        f'<polygon points="{P(*GL)} {P(*M)} {P(*C)}" fill="#0a0d16" opacity="0.10"/>'
+        f'<polygon points="{P(*GR)} {P(*M)} {P(*C)}" fill="#0a0d16" opacity="0.24"/>'
+        f'<polygon points="{P(*TL)} {P(*TR)} {P(*GR)} {P(*C)} {P(*GL)}" fill="none" '
+        f'stroke="#0a0d16" stroke-width="0.6" opacity="0.35"/>'
+        f'</g>')
+
+
 def sparkles(seed, w, h, n=10, pad=14):
     """A group of deterministic twinkling 4-point sparkles."""
     g = rng(seed)
@@ -415,11 +438,19 @@ def svg_open(w, h):
 def title_row(idp, x, y, text, accent=ICE):
     gem = diamond(x + 7, y - 5, 8, f"url(#{idp}ice)", f'filter="url(#{idp}glow)"')
     return (f'{gem}'
-            f'<text x="{x + 24}" y="{y}" font-size="17" font-weight="700" '
-            f'fill="{PLAT}" font-family="{SERIF}">{esc(text)}</text>'
-            f'<text x="{x + 24}" y="{y}" font-size="17" font-weight="700" '
-            f'fill="{accent}" font-family="{SERIF}" opacity="0.0">{esc(text)}'
+            f'<text x="{x + 24}" y="{y}" font-size="17.5" font-weight="700" '
+            f'fill="{PLAT}" font-family="{ROUND}">{esc(text)}</text>'
+            f'<text x="{x + 24}" y="{y}" font-size="17.5" font-weight="700" '
+            f'fill="{accent}" font-family="{ROUND}" opacity="0.0">{esc(text)}'
             f'<animate attributeName="opacity" values="0;0.5;0" dur="4s" repeatCount="indefinite"/></text>')
+
+
+def fade_in(delay, rise=0.5, total=2.4):
+    """Entrance fades are intentionally a no-op. Some image/webview renderers
+    freeze SVG animation at t=0, which would permanently hide any content that
+    starts at opacity 0. Keeping content visible at t=0 guarantees it shows in
+    every renderer; motion comes from decorative (t=0-safe) animations instead."""
+    return ""
 
 
 # --------------------------------------------------------------------------- #
@@ -442,9 +473,7 @@ def render_stats(d):
     for i, (label, val, col) in enumerate(rows):
         y = y0 + i * 26
         parts.append(
-            f'<g opacity="0">'
-            f'<animate attributeName="opacity" from="0" to="1" dur="0.6s" '
-            f'begin="{0.15 + i * 0.12:.2f}s" fill="freeze"/>'
+            f'<g>{fade_in(0.15 + i * 0.12)}'
             f'{diamond(30, y - 4, 5.5, col)}'
             f'<text x="46" y="{y}" font-size="14.5" fill="{MUT}">{esc(label)}</text>'
             f'<text x="{w - 28}" y="{y}" font-size="15" font-weight="700" '
@@ -474,9 +503,8 @@ def render_langs(d):
             f'<circle cx="{cx}" cy="{cy}" r="{R}" fill="none" stroke="{col}" '
             f'stroke-width="{sw}" stroke-linecap="round" '
             f'stroke-dasharray="{seg:.1f} {C - seg:.1f}" '
-            f'stroke-dashoffset="{off:.1f}" transform="rotate(-90 {cx} {cy})" opacity="0">'
-            f'<animate attributeName="opacity" from="0" to="1" dur="0.5s" '
-            f'begin="{0.2 + i * 0.14:.2f}s" fill="freeze"/></circle>')
+            f'stroke-dashoffset="{off:.1f}" transform="rotate(-90 {cx} {cy})">'
+            f'{fade_in(0.2 + i * 0.14)}</circle>')
         start += frac
     parts.append(diamond(cx, cy, 15, f"url(#{idp}ice)", f'filter="url(#{idp}glow)"'))
 
@@ -484,8 +512,7 @@ def render_langs(d):
     for i, (name, pct, col) in enumerate(langs):
         y = ly + i * 22
         parts.append(
-            f'<g opacity="0"><animate attributeName="opacity" from="0" to="1" '
-            f'dur="0.5s" begin="{0.3 + i * 0.12:.2f}s" fill="freeze"/>'
+            f'<g>{fade_in(0.3 + i * 0.12)}'
             f'{diamond(lx + 6, y - 4, 5.5, col)}'
             f'<text x="{lx + 22}" y="{y}" font-size="13.5" fill="{PLAT}">{esc(name)}</text>'
             f'<text x="{w - 28}" y="{y}" font-size="13.5" font-weight="700" '
@@ -583,22 +610,15 @@ def render_activity(d):
         yy = y0 + (y1 - y0) * gy / 4
         parts.append(f'<line x1="{x0}" y1="{yy:.0f}" x2="{x1}" y2="{yy:.0f}" '
                      f'stroke="{BG2}" stroke-width="1" opacity="0.5"/>')
-    parts.append(f'<path d="{area}" fill="url(#{idp}fill)" opacity="0">'
-                 f'<animate attributeName="opacity" from="0" to="1" dur="1.2s" '
-                 f'begin="0.8s" fill="freeze"/></path>')
-    total_len = sum(math.dist(pts[i], pts[i + 1]) for i in range(len(pts) - 1)) or 1
+    parts.append(f'<path d="{area}" fill="url(#{idp}fill)"/>')
     parts.append(
         f'<path d="{line}" fill="none" stroke="url(#{idp}stroke)" stroke-width="3" '
-        f'stroke-linejoin="round" stroke-linecap="round" filter="url(#{idp}glow)" '
-        f'stroke-dasharray="{total_len:.0f}" stroke-dashoffset="{total_len:.0f}">'
-        f'<animate attributeName="stroke-dashoffset" from="{total_len:.0f}" to="0" '
-        f'dur="2.2s" begin="0.2s" fill="freeze"/></path>')
+        f'stroke-linejoin="round" stroke-linecap="round" filter="url(#{idp}glow)"/>')
     # peak gem marker (or a friendly hint when the year is empty)
     peak_i = max(range(n), key=lambda i: weekly[i])
     if weekly[peak_i] > 0:
         pxk, pyk = pts[peak_i]
-        parts.append(f'<g opacity="0"><animate attributeName="opacity" from="0" to="1" '
-                     f'dur="0.5s" begin="2.2s" fill="freeze"/>{diamond(pxk, pyk, 7, GOLD)}'
+        parts.append(f'<g>{fade_in(2.2, rise=0.5, total=3.0)}{diamond(pxk, pyk, 7, GOLD)}'
                      f'<text x="{pxk:.0f}" y="{pyk - 14:.0f}" font-size="11" fill="{GOLD}" '
                      f'text-anchor="middle" font-weight="700">{weekly[peak_i]}</text></g>')
     else:
@@ -630,11 +650,7 @@ def render_trophies(d):
     for i, (label, val, col) in enumerate(items):
         cx = pad + cw * i + cw / 2
         cy = 62
-        parts.append(
-            f'<g opacity="0"><animate attributeName="opacity" from="0" to="1" '
-            f'dur="0.6s" begin="{0.2 + i * 0.12:.2f}s" fill="freeze"/>'
-            f'<animateTransform attributeName="transform" type="translate" '
-            f'values="0 8;0 0" dur="0.6s" begin="{0.2 + i * 0.12:.2f}s" fill="freeze"/>')
+        parts.append(f'<g>{fade_in(0.2 + i * 0.12)}')
         # faceted medallion
         parts.append(f'<circle cx="{cx:.0f}" cy="{cy}" r="30" fill="{BG2}" '
                      f'stroke="{col}" stroke-width="1.6"/>')
@@ -654,79 +670,112 @@ def render_trophies(d):
 # Static (data-independent) animated cards
 # --------------------------------------------------------------------------- #
 def render_header(d):
-    w, h, idp = 1000, 260, "h"
+    w, h, idp = 1000, 300, "h"
     name = d.get("name") or "Khushi Shukla"
+    cx = w / 2
     parts = [svg_open(w, h)]
     parts.append(f"""
   <defs>
     <linearGradient id="{idp}sky" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#0a0d16"/>
-      <stop offset="0.5" stop-color="#101a34"/>
+      <stop offset="0.45" stop-color="#111b38"/>
+      <stop offset="0.75" stop-color="#0d1428"/>
       <stop offset="1" stop-color="#0a0d16"/>
     </linearGradient>
     <linearGradient id="{idp}plat" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0" stop-color="{ICE2}"/>
-      <stop offset="0.4" stop-color="{PLAT}"/>
-      <stop offset="0.6" stop-color="{ICE}"/>
+      <stop offset="0.32" stop-color="#ffffff"/>
+      <stop offset="0.5" stop-color="{ICE}"/>
+      <stop offset="0.68" stop-color="#ffffff"/>
       <stop offset="1" stop-color="{SILV}"/>
     </linearGradient>
-    <linearGradient id="{idp}gemA" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="{ICE2}"/><stop offset="1" stop-color="{SAPP}"/>
+    <linearGradient id="{idp}band" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="{SAPP}"/><stop offset="0.5" stop-color="{ICE2}"/>
+      <stop offset="1" stop-color="{AMET}"/>
     </linearGradient>
-    <linearGradient id="{idp}gemB" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="{ICE}"/><stop offset="1" stop-color="{AMET}"/>
-    </linearGradient>
+    <radialGradient id="{idp}halo" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="{ICE}" stop-opacity="0.32"/>
+      <stop offset="1" stop-color="{ICE}" stop-opacity="0"/>
+    </radialGradient>
     <linearGradient id="{idp}shine" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0" stop-color="#fff" stop-opacity="0"/>
       <stop offset="0.5" stop-color="#fff" stop-opacity="0.6"/>
       <stop offset="1" stop-color="#fff" stop-opacity="0"/>
     </linearGradient>
     <filter id="{idp}glow" x="-40%" y="-40%" width="180%" height="180%">
-      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feGaussianBlur stdDeviation="2.6" result="b"/>
       <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
-    <clipPath id="{idp}clip"><rect x="1" y="1" width="{w - 2}" height="{h - 2}" rx="20"/></clipPath>
+    <clipPath id="{idp}clip"><rect x="1" y="1" width="{w - 2}" height="{h - 2}" rx="22"/></clipPath>
   </defs>
-  <rect x="1" y="1" width="{w - 2}" height="{h - 2}" rx="20" fill="url(#{idp}sky)"/>
-  <g clip-path="url(#{idp}clip)">
-    {sparkles(99, w, h, 26)}
-    <rect x="{-h}" y="0" width="{h * 1.4:.0f}" height="{h}" fill="url(#{idp}shine)"
-          opacity="0.08" transform="skewX(-18)">
-      <animateTransform attributeName="transform" type="translate" additive="sum"
-        from="{-h} 0" to="{w + h} 0" dur="8s" repeatCount="indefinite"/>
-    </rect>
-  </g>""")
+  <rect x="1" y="1" width="{w - 2}" height="{h - 2}" rx="22" fill="url(#{idp}sky)"/>
+  <g clip-path="url(#{idp}clip)">""")
+    # Low-poly gem facets in the corners for subtle texture.
+    facets = [
+        (0, 0, 210, 0, 0, 150, SAPP, 0.06), (0, 0, 120, 0, 0, 80, ICE, 0.05),
+        (w, 0, w - 230, 0, w, 160, AMET, 0.06), (w, 0, w - 120, 0, w, 82, ICE, 0.05),
+        (0, h, 190, h, 0, h - 130, AMET, 0.05), (w, h, w - 210, h, w, h - 150, SAPP, 0.06),
+    ]
+    for (x1, y1, x2, y2, x3, y3, col, op) in facets:
+        parts.append(f'<polygon points="{x1},{y1} {x2},{y2} {x3},{y3}" '
+                     f'fill="{col}" opacity="{op}"/>')
+    parts.append(sparkles(99, w, h, 30))
+    parts.append(f'<rect x="{-h}" y="0" width="{h * 1.4:.0f}" height="{h}" '
+                 f'fill="url(#{idp}shine)" opacity="0.07" transform="skewX(-18)">'
+                 f'<animateTransform attributeName="transform" type="translate" additive="sum" '
+                 f'from="{-h} 0" to="{w + h} 0" dur="8s" repeatCount="indefinite"/></rect>')
+    parts.append('</g>')
 
-    # Central faceted diamond (crown + pavilion) with a gentle float + twinkle.
-    gx, gy = 500, 92
+    # --- Tiara: graduated gems on a gentle arc, set on a platinum band ---
+    sizes = [10, 14, 18, 26, 18, 14, 10]
+    jewels = [SAPP, ICE2, AMET, ICE2, AMET, ICE2, SAPP]
+    xs = [cx + (i - 3) * 54 for i in range(7)]
+    lift = [0, 8, 13, 17, 13, 8, 0]
+    ys = [92 - lift[i] for i in range(7)]
+    band = f'M{xs[0]:.0f},{ys[0] + 4} Q{cx:.0f},50 {xs[6]:.0f},{ys[6] + 4}'
+    parts.append(f'<path d="{band}" fill="none" stroke="url(#{idp}band)" '
+                 f'stroke-width="2.5" opacity="0.55"/>')
+    parts.append(f'<path d="{band}" fill="none" stroke="#ffffff" '
+                 f'stroke-width="1" opacity="0.30"/>')
     parts.append(f'<g filter="url(#{idp}glow)">'
                  f'<animateTransform attributeName="transform" type="translate" '
-                 f'values="0 0;0 -6;0 0" dur="5s" repeatCount="indefinite"/>')
-    parts.append(
-        f'<path d="M{gx-56},{gy-20} L{gx+56},{gy-20} L{gx},{gy+64} Z" fill="url(#{idp}gemA)"/>'
-        f'<path d="M{gx-56},{gy-20} L{gx-20},{gy-20} L{gx},{gy+64} Z" fill="url(#{idp}gemB)" opacity="0.85"/>'
-        f'<path d="M{gx+56},{gy-20} L{gx+20},{gy-20} L{gx},{gy+64} Z" fill="url(#{idp}gemB)" opacity="0.7"/>'
-        f'<path d="M{gx-56},{gy-20} L{gx-28},{gy-44} L{gx+28},{gy-44} L{gx+56},{gy-20} '
-        f'L{gx+20},{gy-20} L{gx},{gy-30} L{gx-20},{gy-20} Z" fill="url(#{idp}plat)"/>'
-        f'<path d="M{gx-28},{gy-44} L{gx},{gy-30} L{gx+28},{gy-44} Z" fill="{ICE2}" opacity="0.9"/>'
-        f'<line x1="{gx-20}" y1="{gy-20}" x2="{gx}" y2="{gy+64}" stroke="{BG0}" stroke-width="1" opacity="0.35"/>'
-        f'<line x1="{gx+20}" y1="{gy-20}" x2="{gx}" y2="{gy+64}" stroke="{BG0}" stroke-width="1" opacity="0.35"/>'
-        f'</g>')
-    # Sparkle glints on the gem
-    for (sx, sy, sd) in [(gx - 18, gy - 30, 0), (gx + 22, gy - 10, 1.2), (gx, gy + 20, 2.1)]:
+                 f'values="0 0;0 -4;0 0" dur="5s" repeatCount="indefinite"/>')
+    for i in range(7):
+        parts.append(faceted_gem(xs[i], ys[i], sizes[i], jewels[i]))
+    parts.append('</g>')
+    for i in (1, 3, 5):
         parts.append(
-            f'<path transform="translate({sx} {sy})" d="M0,-6 Q0,0 6,0 Q0,0 0,6 Q0,0 -6,0 Q0,0 0,-6 Z" '
-            f'fill="#fff" opacity="0"><animate attributeName="opacity" values="0;1;0" '
-            f'dur="2.6s" begin="{sd}s" repeatCount="indefinite"/></path>')
+            f'<path transform="translate({xs[i]:.0f} {ys[i] - 2:.0f})" '
+            f'd="M0,-6 Q0,0 6,0 Q0,0 0,6 Q0,0 -6,0 Q0,0 0,-6 Z" fill="#fff" opacity="0">'
+            f'<animate attributeName="opacity" values="0;1;0" dur="2.8s" '
+            f'begin="{i * 0.4:.1f}s" repeatCount="indefinite"/></path>')
 
-    parts.append(f'<text x="{gx}" y="196" font-size="46" font-weight="800" '
-                 f'font-family="{SERIF}" fill="url(#{idp}plat)" text-anchor="middle" '
-                 f'letter-spacing="1.5" filter="url(#{idp}glow)">{esc(name)}</text>')
-    parts.append(f'<text x="{gx}" y="228" font-size="16.5" font-family="{FONT}" '
-                 f'fill="{ICE}" text-anchor="middle" letter-spacing="3" '
+    # --- Name with a soft halo ---
+    parts.append(f'<ellipse cx="{cx:.0f}" cy="186" rx="300" ry="46" fill="url(#{idp}halo)"/>')
+    parts.append(f'<text x="{cx:.0f}" y="202" font-size="54" font-weight="800" '
+                 f'font-family="{ROUND}" fill="url(#{idp}plat)" text-anchor="middle" '
+                 f'letter-spacing="2" filter="url(#{idp}glow)">{esc(name)}</text>')
+
+    # --- Ornamental divider + subtitle ---
+    dy = 230
+    parts.append(f'<line x1="{cx - 212:.0f}" y1="{dy}" x2="{cx - 26:.0f}" y2="{dy}" '
+                 f'stroke="url(#{idp}band)" stroke-width="1.4" opacity="0.7"/>')
+    parts.append(f'<line x1="{cx + 26:.0f}" y1="{dy}" x2="{cx + 212:.0f}" y2="{dy}" '
+                 f'stroke="url(#{idp}band)" stroke-width="1.4" opacity="0.7"/>')
+    parts.append(diamond(cx - 212, dy, 3.5, SAPP))
+    parts.append(diamond(cx + 212, dy, 3.5, SAPP))
+    parts.append(faceted_gem(cx, dy, 9, ICE2))
+    parts.append(f'<text x="{cx:.0f}" y="266" font-size="15" font-family="{FONT}" '
+                 f'fill="{ICE}" text-anchor="middle" letter-spacing="5" '
                  f'opacity="0.92">FULL-STACK WEB DEVELOPER</text>')
-    parts.append(f'<rect x="1.5" y="1.5" width="{w - 3}" height="{h - 3}" rx="19" '
-                 f'fill="none" stroke="url(#{idp}gemA)" stroke-width="1.5" opacity="0.8"/>')
+
+    # --- Double jewelled border with corner gems ---
+    parts.append(f'<rect x="1.5" y="1.5" width="{w - 3}" height="{h - 3}" rx="21" '
+                 f'fill="none" stroke="url(#{idp}band)" stroke-width="1.5" opacity="0.85"/>')
+    parts.append(f'<rect x="9" y="9" width="{w - 18}" height="{h - 18}" rx="16" '
+                 f'fill="none" stroke="{SILV}" stroke-width="1" opacity="0.18"/>')
+    for (gxn, gyn) in [(26, 26), (w - 26, 26), (26, h - 26), (w - 26, h - 26)]:
+        parts.append(faceted_gem(gxn, gyn, 7, ICE2))
     parts.append('</svg>')
     return "".join(parts)
 
@@ -776,7 +825,7 @@ def render_subtitle(d):
         cid = f"clip{i}"
         kt_s = ";".join(f"{k:.4f}" for k in kt)
         vals_s = ";".join(f"{v:.1f}" for v in vals)
-        parts.append(f'<clipPath id="{cid}"><rect x="{x0}" y="0" height="{h}" width="0">'
+        parts.append(f'<clipPath id="{cid}"><rect x="{x0}" y="0" height="{h}" width="{tw if i == 0 else 0:.0f}">'
                      f'<animate attributeName="width" values="{vals_s}" keyTimes="{kt_s}" '
                      f'dur="{T:.1f}s" repeatCount="indefinite"/></rect></clipPath>')
         parts.append(
@@ -829,7 +878,7 @@ def render_footer(d):
         f'M0,80 C200,50 300,110 500,80 C700,50 800,110 1000,80 L1000,130 L0,130 Z"/></path>')
     parts.append('</g>')
     parts.append(diamond(500, 46, 11, ICE2, f'filter="url(#{idp}glow)"'))
-    parts.append(f'<text x="500" y="42" font-size="17" font-family="{SERIF}" '
+    parts.append(f'<text x="500" y="42" font-size="17" font-family="{ROUND}" '
                  f'fill="{PLAT}" text-anchor="middle" font-weight="700">'
                  f'Thanks for visiting \u2014 let\u2019s build something brilliant \u2728</text>')
     parts.append(f'<rect x="1.5" y="1.5" width="{w-3}" height="{h-3}" rx="19" fill="none" '

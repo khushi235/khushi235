@@ -800,7 +800,7 @@ def render_header(d):
     parts.append(faceted_gem(cx, dy, 9, ICE2))
     parts.append(f'<text x="{cx:.0f}" y="266" font-size="15" font-family="{FONT}" '
                  f'fill="{ICE}" text-anchor="middle" letter-spacing="5" '
-                 f'opacity="0.92">FULL-STACK WEB DEVELOPER</text>')
+                 f'opacity="0.92">DATA ANALYST \u2022 DEVELOPER</text>')
 
     # --- Double jewelled border with corner gems ---
     parts.append(f'<rect x="1.5" y="1.5" width="{w - 3}" height="{h - 3}" rx="21" '
@@ -815,11 +815,12 @@ def render_header(d):
 
 def render_subtitle(d):
     phrases = [
-        "Full-Stack Web Developer",
-        "Diamond-Industry Alumna",
-        "Educator at Heart",
-        "Turning ideas into gems",
-        "New York \u2022 NYIT",
+        "Data Analyst",
+        "Diamond-Industry Data",
+        "Power BI \u2022 Tableau \u2022 SQL",
+        "Full-Stack Developer",
+        "Exploring Agentic AI",
+        "Jersey City, NJ",
     ]
     fs = 24
     adv = fs * 0.60

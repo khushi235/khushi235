@@ -11,7 +11,6 @@
 <div align="center">
   <img src="./assets/subtitle.svg" alt="Full-Stack Web Developer · Diamond-Industry Alumna · Educator at Heart" />
 </div>
-<br />
 
 <div align="center">
   <h2>💎 About Me</h2>

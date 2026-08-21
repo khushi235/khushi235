@@ -19,6 +19,10 @@
     <img src="https://img.shields.io/github/followers/khushi235?label=Followers&style=flat-square&color=b98cff&labelColor=0a0d16&logo=github" alt="Followers" />
   </a>
   &nbsp;
+  <a href="https://www.linkedin.com/in/khushi-shukla-ba2310212/">
+    <img src="https://img.shields.io/badge/LinkedIn-Khushi%20Shukla-5b8cff?style=flat-square&logo=linkedin&logoColor=white&labelColor=0a0d16" alt="LinkedIn" />
+  </a>
+  &nbsp;
   <img src="https://img.shields.io/badge/New%20York-%F0%9F%97%BD-5b8cff?style=flat-square&labelColor=0a0d16" alt="Based in New York" />
   &nbsp;
   <img src="https://img.shields.io/badge/NYIT-%F0%9F%8E%93-37e0a6?style=flat-square&labelColor=0a0d16" alt="New York Institute of Technology" />

@@ -274,9 +274,16 @@ def fetch():
             lang_bytes[r["language"]] = lang_bytes.get(r["language"], 0) + 1
 
     total = sum(lang_bytes.values()) or 1
-    top = sorted(lang_bytes.items(), key=lambda x: -x[1])[:6]
-    d["langs"] = [(k, round(v * 100 / total, 1), lang_color(k, i))
-                  for i, (k, v) in enumerate(top)]
+    ranked = sorted(lang_bytes.items(), key=lambda x: -x[1])
+    langs = []
+    for name, v in ranked:
+        pct = round(v * 100 / total, 1)
+        if pct < 0.1:  # skip languages that would just render as "0%"
+            continue
+        langs.append((name, pct, lang_color(name, len(langs))))
+        if len(langs) >= 6:
+            break
+    d["langs"] = langs
 
     # Contribution history via GraphQL, one <=1yr window per calendar year.
     days = {}

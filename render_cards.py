@@ -722,9 +722,18 @@ def render_header(d):
       <stop offset="0.68" stop-color="#ffffff"/>
       <stop offset="1" stop-color="{SILV}"/>
     </linearGradient>
-    <linearGradient id="{idp}band" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="{SAPP}"/><stop offset="0.5" stop-color="{ICE2}"/>
-      <stop offset="1" stop-color="{AMET}"/>
+    <linearGradient id="{idp}body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.30"/>
+      <stop offset="0.5" stop-color="{ICE}" stop-opacity="0.15"/>
+      <stop offset="1" stop-color="{ICE}" stop-opacity="0.04"/>
+    </linearGradient>
+    <linearGradient id="{idp}flL" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="{SILV}" stop-opacity="0"/>
+      <stop offset="1" stop-color="{SILV}" stop-opacity="0.5"/>
+    </linearGradient>
+    <linearGradient id="{idp}flR" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="{SILV}" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="{SILV}" stop-opacity="0"/>
     </linearGradient>
     <radialGradient id="{idp}halo" cx="0.5" cy="0.5" r="0.5">
       <stop offset="0" stop-color="{ICE}" stop-opacity="0.32"/>
@@ -743,45 +752,50 @@ def render_header(d):
   </defs>
   <rect x="1" y="1" width="{w - 2}" height="{h - 2}" rx="22" fill="url(#{idp}sky)"/>
   <g clip-path="url(#{idp}clip)">""")
-    # Low-poly gem facets in the corners for subtle texture.
-    facets = [
-        (0, 0, 210, 0, 0, 150, SAPP, 0.06), (0, 0, 120, 0, 0, 80, ICE, 0.05),
-        (w, 0, w - 230, 0, w, 160, AMET, 0.06), (w, 0, w - 120, 0, w, 82, ICE, 0.05),
-        (0, h, 190, h, 0, h - 130, AMET, 0.05), (w, h, w - 210, h, w, h - 150, SAPP, 0.06),
-    ]
-    for (x1, y1, x2, y2, x3, y3, col, op) in facets:
-        parts.append(f'<polygon points="{x1},{y1} {x2},{y2} {x3},{y3}" '
-                     f'fill="{col}" opacity="{op}"/>')
-    parts.append(sparkles(99, w, h, 30))
+    parts.append(sparkles(99, w, h, 12))
     parts.append(f'<rect x="{-h}" y="0" width="{h * 1.4:.0f}" height="{h}" '
-                 f'fill="url(#{idp}shine)" opacity="0.07" transform="skewX(-18)">'
+                 f'fill="url(#{idp}shine)" opacity="0.06" transform="skewX(-18)">'
                  f'<animateTransform attributeName="transform" type="translate" additive="sum" '
                  f'from="{-h} 0" to="{w + h} 0" dur="8s" repeatCount="indefinite"/></rect>')
     parts.append('</g>')
 
-    # --- Tiara: graduated gems on a gentle arc, set on a platinum band ---
-    sizes = [10, 14, 18, 26, 18, 14, 10]
-    jewels = [SAPP, ICE2, AMET, ICE2, AMET, ICE2, SAPP]
-    xs = [cx + (i - 3) * 54 for i in range(7)]
-    lift = [0, 8, 13, 17, 13, 8, 0]
-    ys = [92 - lift[i] for i in range(7)]
-    band = f'M{xs[0]:.0f},{ys[0] + 4} Q{cx:.0f},50 {xs[6]:.0f},{ys[6] + 4}'
-    parts.append(f'<path d="{band}" fill="none" stroke="url(#{idp}band)" '
-                 f'stroke-width="2.5" opacity="0.55"/>')
-    parts.append(f'<path d="{band}" fill="none" stroke="#ffffff" '
-                 f'stroke-width="1" opacity="0.30"/>')
+    # --- Emblem: a single line-art brilliant-cut diamond with fine engraving ---
+    ex, ey = cx, 80
+    tw2, gw2, ch2, pd2 = 13, 27, 17, 37
+    TL, TR = (ex - tw2, ey - ch2), (ex + tw2, ey - ch2)
+    GL, GR = (ex - gw2, ey), (ex + gw2, ey)
+    Cu, MC = (ex, ey + pd2), (ex, ey)
+    P1, P2 = (ex - tw2, ey), (ex + tw2, ey)
+    outline = (f'M{TL[0]:.0f},{TL[1]:.0f} L{TR[0]:.0f},{TR[1]:.0f} '
+               f'L{GR[0]:.0f},{GR[1]:.0f} L{Cu[0]:.0f},{Cu[1]:.0f} L{GL[0]:.0f},{GL[1]:.0f} Z')
+
+    def eseg(a, b):
+        return (f'<path d="M{a[0]:.0f},{a[1]:.0f} L{b[0]:.0f},{b[1]:.0f}" fill="none" '
+                f'stroke="url(#{idp}plat)" stroke-width="1" opacity="0.7"/>')
+
     parts.append(f'<g filter="url(#{idp}glow)">'
                  f'<animateTransform attributeName="transform" type="translate" '
-                 f'values="0 0;0 -4;0 0" dur="5s" repeatCount="indefinite"/>')
-    for i in range(7):
-        parts.append(faceted_gem(xs[i], ys[i], sizes[i], jewels[i]))
+                 f'values="0 0;0 -1.5;0 0" dur="7s" repeatCount="indefinite"/>')
+    parts.append(f'<path d="{outline}" fill="url(#{idp}body)"/>')
+    parts.append(f'<line x1="{ex - 150:.0f}" y1="{ey}" x2="{ex - 42:.0f}" y2="{ey}" '
+                 f'stroke="url(#{idp}flL)" stroke-width="1.2"/>')
+    parts.append(f'<line x1="{ex + 42:.0f}" y1="{ey}" x2="{ex + 150:.0f}" y2="{ey}" '
+                 f'stroke="url(#{idp}flR)" stroke-width="1.2"/>')
+    parts.append(diamond(ex - 158, ey, 3, SILV, 'opacity="0.55"'))
+    parts.append(diamond(ex + 158, ey, 3, SILV, 'opacity="0.55"'))
+    parts.append(f'<path d="{outline}" fill="none" stroke="url(#{idp}plat)" '
+                 f'stroke-width="1.6" stroke-linejoin="round"/>')
+    parts.append(eseg(GL, GR))
+    parts.append(eseg(TL, MC))
+    parts.append(eseg(TR, MC))
+    parts.append(eseg(MC, Cu))
+    parts.append(eseg(P1, Cu))
+    parts.append(eseg(P2, Cu))
+    parts.append(f'<path transform="translate({ex - 5:.0f} {ey - 12:.0f})" '
+                 f'd="M0,-5 Q0,0 5,0 Q0,0 0,5 Q0,0 -5,0 Q0,0 0,-5 Z" fill="#ffffff" opacity="0">'
+                 f'<animate attributeName="opacity" values="0;0.9;0" dur="3.6s" '
+                 f'begin="1s" repeatCount="indefinite"/></path>')
     parts.append('</g>')
-    for i in (1, 3, 5):
-        parts.append(
-            f'<path transform="translate({xs[i]:.0f} {ys[i] - 2:.0f})" '
-            f'd="M0,-6 Q0,0 6,0 Q0,0 0,6 Q0,0 -6,0 Q0,0 0,-6 Z" fill="#fff" opacity="0">'
-            f'<animate attributeName="opacity" values="0;1;0" dur="2.8s" '
-            f'begin="{i * 0.4:.1f}s" repeatCount="indefinite"/></path>')
 
     # --- Name with a soft halo ---
     parts.append(f'<ellipse cx="{cx:.0f}" cy="186" rx="300" ry="46" fill="url(#{idp}halo)"/>')
@@ -789,26 +803,24 @@ def render_header(d):
                  f'font-family="{ROUND}" fill="url(#{idp}plat)" text-anchor="middle" '
                  f'letter-spacing="2" filter="url(#{idp}glow)">{esc(name)}</text>')
 
-    # --- Ornamental divider + subtitle ---
+    # --- Fine divider + subtitle ---
     dy = 230
-    parts.append(f'<line x1="{cx - 212:.0f}" y1="{dy}" x2="{cx - 26:.0f}" y2="{dy}" '
-                 f'stroke="url(#{idp}band)" stroke-width="1.4" opacity="0.7"/>')
-    parts.append(f'<line x1="{cx + 26:.0f}" y1="{dy}" x2="{cx + 212:.0f}" y2="{dy}" '
-                 f'stroke="url(#{idp}band)" stroke-width="1.4" opacity="0.7"/>')
-    parts.append(diamond(cx - 212, dy, 3.5, SAPP))
-    parts.append(diamond(cx + 212, dy, 3.5, SAPP))
-    parts.append(faceted_gem(cx, dy, 9, ICE2))
+    parts.append(f'<line x1="{cx - 210:.0f}" y1="{dy}" x2="{cx - 24:.0f}" y2="{dy}" '
+                 f'stroke="url(#{idp}plat)" stroke-width="1" opacity="0.5"/>')
+    parts.append(f'<line x1="{cx + 24:.0f}" y1="{dy}" x2="{cx + 210:.0f}" y2="{dy}" '
+                 f'stroke="url(#{idp}plat)" stroke-width="1" opacity="0.5"/>')
+    parts.append(diamond(cx - 210, dy, 3, SILV, 'opacity="0.6"'))
+    parts.append(diamond(cx + 210, dy, 3, SILV, 'opacity="0.6"'))
+    parts.append(diamond(cx, dy, 5.5, f"url(#{idp}plat)"))
     parts.append(f'<text x="{cx:.0f}" y="266" font-size="15" font-family="{FONT}" '
                  f'fill="{ICE}" text-anchor="middle" letter-spacing="5" '
-                 f'opacity="0.92">DATA ANALYST \u2022 DEVELOPER</text>')
+                 f'opacity="0.9">DATA ANALYST \u2022 DEVELOPER</text>')
 
-    # --- Double jewelled border with corner gems ---
+    # --- Refined double border ---
     parts.append(f'<rect x="1.5" y="1.5" width="{w - 3}" height="{h - 3}" rx="21" '
-                 f'fill="none" stroke="url(#{idp}band)" stroke-width="1.5" opacity="0.85"/>')
+                 f'fill="none" stroke="url(#{idp}plat)" stroke-width="1.2" opacity="0.55"/>')
     parts.append(f'<rect x="9" y="9" width="{w - 18}" height="{h - 18}" rx="16" '
-                 f'fill="none" stroke="{SILV}" stroke-width="1" opacity="0.18"/>')
-    for (gxn, gyn) in [(26, 26), (w - 26, 26), (26, h - 26), (w - 26, h - 26)]:
-        parts.append(faceted_gem(gxn, gyn, 7, ICE2))
+                 f'fill="none" stroke="{SILV}" stroke-width="1" opacity="0.15"/>')
     parts.append('</svg>')
     return "".join(parts)
 

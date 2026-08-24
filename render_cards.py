@@ -548,8 +548,8 @@ def render_overview(d):
         return svg[svg.index('>') + 1:svg.rindex('</svg>')]
 
     parts = [svg_open(cardw * 2 + gap, h)]
-    parts.append(f'<g>{inner(render_stats(d))}</g>')
-    parts.append(f'<g transform="translate({cardw + gap},0)">{inner(render_langs(d))}</g>')
+    parts.append(f'<g>{inner(render_langs(d))}</g>')
+    parts.append(f'<g transform="translate({cardw + gap},0)">{inner(render_stats(d))}</g>')
     parts.append('</svg>')
     return "".join(parts)
 

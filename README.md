@@ -197,57 +197,6 @@ Designed reusable data-quality and transformation workflows for enterprise envir
 
 > **Focus:** Data Quality · AI · Automation · Enterprise Data · APIs
 
----
-
-<div align="center">
-
-### 🔬 Intelligence Pipeline
-
-```text
-                 ┌─────────────────┐
-                 │RAW / UNSTRUCTURED │
-                 │       DATA       │
-                 └────────┬────────┘
-                          │
-                          ▼
-                 ┌─────────────────┐
-                 │   DATA QUALITY   │
-                 │ Profiling • Rules│
-                 │ Anomaly • Dedup  │
-                 └────────┬────────┘
-                          │
-                          ▼
-                 ┌─────────────────┐
-                 │   TRANSFORMATION │
-                 │  SQL • Python    │
-                 │  APIs • Pandas   │
-                 └────────┬────────┘
-                          │
-                          ▼
-                 ┌─────────────────┐
-                 │   INTELLIGENCE   │
-                 │ AI • NLP • ML    │
-                 │ Forecasting      │
-                 └────────┬────────┘
-                          │
-                          ▼
-                 ┌─────────────────┐
-                 │     INSIGHTS     │
-                 │Power BI • Tableau│
-                 │ Analytics        │
-                 └────────┬────────┘
-                          │
-                          ▼
-                 ┌─────────────────┐
-                 │    AUTOMATION    │
-                 │ APIs • Workflows │
-                 │ Power Automate   │
-                 └─────────────────┘
-```
-
-</div>
-
----
 
 <div align="center">
   <h2>💼 Experience</h2>

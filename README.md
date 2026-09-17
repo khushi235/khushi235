@@ -244,7 +244,7 @@ Designed reusable data-quality and transformation workflows for enterprise envir
 
 ```text
                  ┌─────────────────┐
-                 │  RAW / UNSTRUCTURED │
+                 │RAW / UNSTRUCTURED │
                  │       DATA       │
                  └────────┬────────┘
                           │
@@ -272,7 +272,7 @@ Designed reusable data-quality and transformation workflows for enterprise envir
                           ▼
                  ┌─────────────────┐
                  │     INSIGHTS     │
-                 │ Power BI • Tableau│
+                 │Power BI • Tableau│
                  │ Analytics        │
                  └────────┬────────┘
                           │
@@ -373,18 +373,6 @@ Designed reusable data-quality and transformation workflows for enterprise envir
 
 ---
 
-<div align="center">
-  <h2>⚡ Currently Exploring</h2>
-</div>
-
-```text
-Generative AI       ████████████████████
-AI Automation       ██████████████████░░
-NLP                 ████████████████░░░░
-Data Quality        ███████████████████░
-Advanced Analytics  ██████████████████░░
-Forecasting         ███████████████░░░░░
-```
 
 <div align="center">
 

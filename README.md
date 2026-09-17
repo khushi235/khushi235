@@ -300,18 +300,6 @@ Designed reusable data-quality and transformation workflows for enterprise envir
 ---
 
 <div align="center">
-  <h2>📊 GitHub Intelligence</h2>
-</div>
-
-<div align="center">
-  <img src="./assets/overview.svg" width="850"
-       alt="Khushi's GitHub statistics and most used languages" />
-</div>
-
-<br />
-
-
-<div align="center">
   <h2>🎓 Education</h2>
 </div>
 

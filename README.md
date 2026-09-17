@@ -37,20 +37,6 @@
 
 <!-- ══════════════════════════════════════════════════════════════ -->
 
-<div align="center">
-
-```text                                                              
-  DATA  ─────────────►  INTELLIGENCE  ─────────►  ACTION       
-    │                        │                      │            
-    ├── SQL                  ├── Generative AI      ├── Automation
-    ├── Python               ├── NLP                ├── APIs
-    ├── Data Quality         ├── Forecasting        └── BI
-    └── Enterprise Data      └── Analytics                   
-
-```
-
-</div>
-
 ---
 
 <div align="center">

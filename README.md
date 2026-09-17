@@ -310,26 +310,6 @@ Designed reusable data-quality and transformation workflows for enterprise envir
 
 <br />
 
-<div align="center">
-  <img src="./assets/streak.svg" width="850"
-       alt="Contribution streak" />
-</div>
-
-<br />
-
-<div align="center">
-  <img src="./assets/activity.svg" width="850"
-       alt="Contribution activity over the last year" />
-</div>
-
-<br />
-
-<div align="center">
-  <img src="./assets/trophies.svg" width="850"
-       alt="GitHub milestones" />
-</div>
-
----
 
 <div align="center">
   <h2>🎓 Education</h2>

@@ -4,21 +4,6 @@
 
 <!-- ╚══════════════════════════════════════════════════════════════╝ -->
 
-<div align="center">
-
-  <!-- Animated AI header -->
-
-  <img src="./assets/ai-header.gif" width="850" alt="Khushi Shukla — Senior Data & AI Analyst" />
-
-  <br />
-
-<img src="./assets/subtitle.svg"
-    alt="Senior Data & AI Analyst · SQL · Python · Generative AI · Power BI · Automation" />
-
-<br /><br />
-
- 
-</div>
 
 <br />
 

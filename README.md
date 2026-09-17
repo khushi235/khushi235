@@ -17,16 +17,7 @@
 
 <br /><br />
 
-  <a href="https://github.com/khushi235">
-    <img src="https://img.shields.io/badge/AI%20INTELLIGENCE%20LAB-0a0d16?style=for-the-badge&logo=openai&logoColor=8fe3ff" />
-  </a>
-  <a href="https://www.linkedin.com/in/khushi-shukla-ms-ba2310212/">
-    <img src="https://img.shields.io/badge/LINKEDIN-0a0d16?style=for-the-badge&logo=linkedin&logoColor=5b8cff" />
-  </a>
-  <a href="mailto:shuklakhushim2@gmail.com">
-    <img src="https://img.shields.io/badge/CONTACT-0a0d16?style=for-the-badge&logo=gmail&logoColor=ff6b93" />
-  </a>
-
+ 
 </div>
 
 <br />

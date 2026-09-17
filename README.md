@@ -1,6 +1,6 @@
 <!-- ╔══════════════════════════════════════════════════════════════╗ -->
 
-<!-- ║              KHUSHI SHUKLA · AI INTELLIGENCE LAB           ║ -->
+<!-- ║              KHUSHI SHUKLA · Senior Data & AI Analyst          ║ -->
 
 <!-- ╚══════════════════════════════════════════════════════════════╝ -->
 
@@ -8,12 +8,12 @@
 
   <!-- Animated AI header -->
 
-  <img src="./assets/ai-header.gif" width="850" alt="Khushi Shukla — Data & AI Analyst" />
+  <img src="./assets/ai-header.gif" width="850" alt="Khushi Shukla — Senior Data & AI Analyst" />
 
   <br />
 
 <img src="./assets/subtitle.svg"
-    alt="Data & AI Analyst · SQL · Python · Generative AI · Power BI · Automation" />
+    alt="Senior Data & AI Analyst · SQL · Python · Generative AI · Power BI · Automation" />
 
 <br /><br />
 
@@ -39,17 +39,14 @@
 
 <div align="center">
 
-```text
-┌──────────────────────────────────────────────────────────────┐
-│  KHUSHI SHUKLA // DATA & AI ANALYST                          │
-│                                                              │
-│  DATA  ───────────────►  INTELLIGENCE  ───────────►  ACTION │
-│    │                           │                         │     │
-│    ├── SQL                    ├── Generative AI        ├── Automation
-│    ├── Python                 ├── NLP                   ├── APIs
-│    ├── Data Quality           ├── Forecasting           └── BI
-│    └── Enterprise Data        └── Analytics                   │
-└──────────────────────────────────────────────────────────────┘
+```text                                                              
+  DATA  ─────────────►  INTELLIGENCE  ─────────►  ACTION       
+    │                        │                      │            
+    ├── SQL                  ├── Generative AI      ├── Automation
+    ├── Python               ├── NLP                ├── APIs
+    ├── Data Quality         ├── Forecasting        └── BI
+    └── Enterprise Data      └── Analytics                   
+
 ```
 
 </div>

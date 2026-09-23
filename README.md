@@ -1,259 +1,126 @@
-
-
 <div align="center">
-  <h2>🤖 About Me</h2>
+  <h2>AI Integration Engineer</h2>
 </div>
 
-I’m a **Senior Data & AI Analyst** focused on building intelligent data solutions that transform complex enterprise data into reliable, actionable intelligence.
+I build AI-enabled integrations and data workflows that turn complex business data into reliable, production-ready systems.
 
-* 🤖 Architecting **AI-enabled data solutions** that transform unstructured enterprise data into reliable, ML-ready datasets.
-* 🧠 Working across **Generative AI, NLP, Prompt Engineering, AI-powered automation and REST APIs**.
-* 🐍 Building analytical and automation solutions with **Python, Pandas, NumPy and Scikit-learn**.
-* 🗄️ Using **SQL, PostgreSQL, SQL Server, MySQL and MongoDB** to analyze, transform and validate data.
-* 🔍 Designing data-quality frameworks involving **profiling, anomaly detection, deduplication, standardization and business-rule validation**.
-* 📊 Turning analysis into decisions through **Power BI, Tableau, Excel, forecasting, A/B testing, RFM and cohort analysis**.
-* ⚡ Automating operational workflows with **Power Automate, Microsoft Lists and Dataverse**.
-* 🎓 **M.S. in Computer Science, With Distinction** — New York Institute of Technology.
+* Built and deployed Python workflows for data ingestion, transformation, validation and downstream processing, doubling processing speed and reducing manual intervention by 50%.
+* Diagnose performance bottlenecks across REST APIs, data pipelines and asynchronous workflows, reducing processing latency by 30%.
+* Build automated testing and monitoring frameworks that diagnose failure modes and prevent production errors.
+* Design AI-enabled systems that turn unstructured business data into structured datasets for CRM, analytics and operations.
+* Work across Generative AI, AI Agents, LLM Applications, LLM API Integration, Prompt Engineering, NLP and AI-powered Automation.
+* Build with React.js, Next.js, Node.js, Express.js, Python, SQL, PostgreSQL, MySQL, SQL Server and MongoDB.
+* Use Power BI, Tableau, Excel, Power Query, Power Automate, Microsoft Dataverse and Microsoft Lists to automate and communicate results.
 
 <br />
 
 ---
 
 <div align="center">
-  <h2>🧠 AI Intelligence Lab</h2>
-  <p><i>Building at the intersection of data, intelligence and automation.</i></p>
-</div>
-
-<table align="center">
-<tr>
-<td align="center" width="25%">
-
-### 🤖 AI
-
-Generative AI
-NLP
-Prompt Engineering
-AI Automation
-Scikit-learn
-
-</td>
-
-<td align="center" width="25%">
-
-### 📊 Data
-
-SQL
-Python
-Pandas
-NumPy
-Data Analysis
-
-</td>
-
-<td align="center" width="25%">
-
-### 🔍 Intelligence
-
-Forecasting
-A/B Testing
-RFM Analysis
-Cohort Analysis
-Statistical Analysis
-
-</td>
-
-<td align="center" width="25%">
-
-### ⚡ Automation
-
-REST APIs
-Power Automate
-Dataverse
-Microsoft Lists
-Data Workflows
-
-</td>
-</tr>
-</table>
-
----
-
-<div align="center">
-  <h2>🛠️ Technology Stack</h2>
+  <h2>Technology Stack</h2>
 </div>
 
 <div align="center">
 
-### 🧠 AI & Machine Learning
+### Programming & Data
 
-<img src="https://img.shields.io/badge/Generative%20AI-8fe3ff?style=for-the-badge&logo=openai&logoColor=0a0d16" />
-<img src="https://img.shields.io/badge/NLP-b98cff?style=for-the-badge&logoColor=0a0d16" />
-<img src="https://img.shields.io/badge/Prompt%20Engineering-5b8cff?style=for-the-badge&logoColor=white" />
-<img src="https://img.shields.io/badge/Scikit--learn-ffd479?style=for-the-badge&logo=scikitlearn&logoColor=0a0d16" />
+`React.js` · `Next.js` · `Bootstrap` · `Node.js` · `Express.js` · `Python` · `SQL` · `PostgreSQL` · `MySQL` · `SQL Server` · `MongoDB`
 
-<br /><br />
+### APIs & Integrations
 
-### 🐍 Programming & Data
+`REST APIs` · `JSON` · `API Integration` · `Data Integration` · `Workflow Automation`
 
-<img src="https://img.shields.io/badge/Python-8fe3ff?style=for-the-badge&logo=python&logoColor=0a0d16" />
-<img src="https://img.shields.io/badge/SQL-5b8cff?style=for-the-badge&logo=postgresql&logoColor=white" />
-<img src="https://img.shields.io/badge/Pandas-b98cff?style=for-the-badge&logo=pandas&logoColor=0a0d16" />
-<img src="https://img.shields.io/badge/NumPy-8fe3ff?style=for-the-badge&logo=numpy&logoColor=0a0d16" />
-<img src="https://img.shields.io/badge/Excel-37e0a6?style=for-the-badge&logo=microsoftexcel&logoColor=0a0d16" />
-<img src="https://img.shields.io/badge/Power%20Query-ffd479?style=for-the-badge&logoColor=0a0d16" />
+### AI & LLM Systems
 
-<br /><br />
+`Generative AI` · `AI Agents` · `LLM Applications` · `LLM API Integration` · `Prompt Engineering` · `AI-powered Automation` · `NLP`
 
-### 📈 Business Intelligence
+### Data Engineering
 
-<img src="https://img.shields.io/badge/Power%20BI-ffd479?style=for-the-badge&logo=powerbi&logoColor=0a0d16" />
-<img src="https://img.shields.io/badge/Tableau-5b8cff?style=for-the-badge&logo=tableau&logoColor=white" />
-<img src="https://img.shields.io/badge/Forecasting-b98cff?style=for-the-badge&logoColor=0a0d16" />
-<img src="https://img.shields.io/badge/A%2FB%20Testing-8fe3ff?style=for-the-badge&logoColor=0a0d16" />
+`Data Pipelines` · `Data Transformation` · `Data Validation` · `Data Profiling` · `Anomaly Detection` · `Deduplication` · `Data Standardization`
 
-<br /><br />
+### Automation & Platforms
 
-### ⚙️ Data Engineering & Automation
-
-<img src="https://img.shields.io/badge/PostgreSQL-5b8cff?style=for-the-badge&logo=postgresql&logoColor=white" />
-<img src="https://img.shields.io/badge/SQL%20Server-8fe3ff?style=for-the-badge&logo=microsoftsqlserver&logoColor=0a0d16" />
-<img src="https://img.shields.io/badge/MySQL-b98cff?style=for-the-badge&logo=mysql&logoColor=0a0d16" />
-<img src="https://img.shields.io/badge/MongoDB-37e0a6?style=for-the-badge&logo=mongodb&logoColor=0a0d16" />
-<img src="https://img.shields.io/badge/REST%20APIs-ffd479?style=for-the-badge&logoColor=0a0d16" />
-<img src="https://img.shields.io/badge/Power%20Automate-b98cff?style=for-the-badge&logo=powerautomate&logoColor=0a0d16" />
-
-<br /><br />
-
-### 🔍 Data Quality & Governance
-
-<img src="https://img.shields.io/badge/Data%20Profiling-8fe3ff?style=for-the-badge&logoColor=0a0d16" />
-<img src="https://img.shields.io/badge/Anomaly%20Detection-5b8cff?style=for-the-badge&logoColor=white" />
-<img src="https://img.shields.io/badge/Deduplication-b98cff?style=for-the-badge&logoColor=0a0d16" />
-<img src="https://img.shields.io/badge/Data%20Standardization-ffd479?style=for-the-badge&logoColor=0a0d16" />
-<img src="https://img.shields.io/badge/Business%20Rules-37e0a6?style=for-the-badge&logoColor=0a0d16" />
-<img src="https://img.shields.io/badge/Dataverse-5b8cff?style=for-the-badge&logoColor=white" />
+`Power Automate` · `Microsoft Dataverse` · `Microsoft Lists` · `Power Query` · `Power BI` · `Tableau` · `Excel`
 
 </div>
 
 ---
 
 <div align="center">
-  <h2>🚀 Featured Intelligence Systems</h2>
-  <p><i>Selected projects across analytics, forecasting, experimentation and AI.</i></p>
+  <h2>Featured Projects</h2>
 </div>
 
-### 🤖 AI-Powered Diamond Pricing & Recommendation System
+### RoamEase Travel Portal
 
-**Python · SQL · Scikit-learn · NLP · REST APIs**
+**React.js · Node.js · Express.js · PostgreSQL · REST APIs**
 
-AI-powered pricing and recommendation system combining certification data, diamond quality parameters, inventory information and market pricing to generate pricing ranges and comparable alternatives.
-
-> **Focus:** AI · Recommendation Systems · NLP · Data Modeling · APIs
-
----
-
-### 📊 Marketplace Performance & Customer Analytics
-
-**SQL · Python · Power BI · Excel**
-
-Analyzed **100K+ transaction and customer records** to uncover revenue, conversion and product-performance trends.
-
-* Built an **RFM-based customer segmentation model**.
-* Identified high-value, at-risk and repeat customer groups.
-* Conducted cohort and trend analysis to uncover customer behavior patterns.
-* Designed an interactive Power BI dashboard for recurring performance reporting.
-
-> **Focus:** Customer Intelligence · SQL · Python · RFM · Cohort Analysis · BI
+* Built a full-stack travel recommendation platform integrating REST APIs, PostgreSQL and analytics workflows to centralize trip planning and personalized travel insights.
+* Developed recommendation and user-interaction workflows to help travelers discover relevant destinations and trip options, increasing user engagement by 30%.
+* Designed analytics dashboards to surface user behavior and travel trends, enabling data-driven improvements to recommendations and the platform experience.
 
 ---
 
-### 📈 Business Forecasting & Experimentation Analytics
+### Placement Management System
 
-**Python · SQL · Excel · Power BI**
+**React.js · Next.js · Express.js · Node.js · PostgreSQL · REST APIs**
 
-Built analytical systems combining time-series forecasting with controlled experimentation.
-
-* Developed a Python forecasting model for weekly sales and demand.
-* Improved forecast accuracy by **20%** for inventory planning.
-* Implemented A/B testing using SQL and Python.
-* Applied statistical significance testing to evaluate conversion and engagement.
-* Built KPI validation checks to standardize experiment measurement.
-
-> **Focus:** Forecasting · Experimentation · Statistics · Python · SQL
-
----
-
-### ⚡ Enterprise Data Quality & Automation
-
-**SQL · Python · APIs · AI · Automation**
-
-Designed reusable data-quality and transformation workflows for enterprise environments.
-
-* Automated data profiling and validation.
-* Applied anomaly detection, deduplication and standardization.
-* Transformed unstructured data into reliable, ML-ready datasets.
-* Built scalable and auditable data workflows.
-* Analyzed millions of enterprise records to identify data-quality gaps.
-
-> **Focus:** Data Quality · AI · Automation · Enterprise Data · APIs
-
+* Worked directly with the Gujarat University Placement Cell to gather requirements and design a full-stack platform covering student, company and admin workflows.
+* Built a three-sided system that automated student-job matching, job applications and placement tracking, increasing hiring speed by 75%.
+* Replaced fragmented manual processes with centralized APIs, workflows and reporting that cut manual processing by 30% and gave the team faster visibility into hiring activity.
 
 <div align="center">
-  <h2>💼 Experience</h2>
+  <h2>Experience</h2>
 </div>
 
-### Senior Data & AI Analyst · R2D2 Consulting
+### AI Integration Engineer · R2D2 Consulting
 
 **Nov 2024 – Present · New York, NY · Remote**
 
-* Architected AI-enabled data solutions transforming unstructured enterprise data into reliable, ML-ready datasets for analytics, CRM and operations.
-* Built data-quality frameworks using automated profiling, anomaly detection, standardization, deduplication and business-rule validation.
-* Combined **SQL, Python, APIs and AI techniques** to automate complex data workflows and create scalable, auditable data operations.
-* Analyzed **millions of enterprise records**, identifying data-quality gaps and building reusable transformation frameworks.
-* Collaborated with data, engineering, operations and client teams to define requirements and deploy production-ready solutions.
+* Built and deployed end-to-end AI integration workflows using Python to automate data ingestion, transformation, validation and downstream processing, doubling processing speed and reducing manual intervention by 50%.
+* Diagnosed and resolved performance bottlenecks across REST APIs, data pipelines and asynchronous workflows, reducing processing latency by 30% and improving production reliability.
+* Built automated testing and monitoring frameworks to diagnose failure modes and prevent production errors, improving system reliability and reducing operational disruptions by half.
+* Partnered with stakeholders to map requirements and design AI-enabled systems that turned unstructured business data into structured, production-ready datasets for CRM, analytics and operations, cutting analytical errors by 40%.
+* Standardized client data environments and built reusable integration components, improving email delivery reliability to 99% and enabling faster, more reliable production releases.
 
 ---
 
-### Operations & Technology Analyst · New York Institute of Technology
+### Technology & Automation Analyst · New York Institute of Technology
 
 **Mar 2023 – Oct 2024 · New York, NY**
 
-* Managed operational datasets supporting **7,000+ students** using Excel-based validation and reconciliation.
-* Automated inventory workflows using **Microsoft Lists and Power Automate**, delivering **35% annual inventory cost savings**.
-* Redesigned the NYIT Zoom portal and created dashboards, documentation and training for academic teams.
-* Automated the “Thank a Professor” certificate process, saving approximately **100+ hours of manual work annually**.
+* Led the design and development of an inventory automation system with the Director and ITS team, replacing a paper-based process and delivering 35% annual cost savings.
+* Crafted 70+ modern, responsive Canvas LMS interfaces using HTML5 and CSS3 and redesigned the NYIT Zoom portal, improving page-load performance by 60%, student engagement by 45% and user adoption by 2x.
+* Automated the Thank a Professor certificate workflow using Excel and Power Automate, eliminating repetitive manual processing, streamlining operations and saving 100+ hours annually.
+* Designed and supported technology workflows serving 7,000+ students, identifying data inconsistencies, workflow failures and process bottlenecks across academic operations.
 
 ---
 
-### Data Analyst · Estatic Infotech Pvt. Ltd.
+### Data Automation Engineer · Estatic Infotech Pvt. Ltd.
 
-**Jul 2020 – Jul 2022 · Ahmedabad, India**
+**Jul 2020 – Jul 2022 · Ahmedabad, GJ**
 
-* Analyzed and reconciled business datasets using Excel to identify anomalies, trends and performance gaps.
-* Standardized recurring data preparation and reporting workflows in **Tableau**.
-* Used **SQL** to build recurring analyses, reports and business KPIs.
-* Built **Power BI dashboards** to improve management visibility into performance trends.
-
----
+* Implemented a communication widget integrating Twilio Voice and Messaging APIs, connecting user actions to real-time calling and messaging workflows within client applications, enhancing support coverage by 50%.
+* Built Python data pipelines with validation logic that automated cleansing, reconciliation and transformation, improving reporting reliability.
+* Automated SQL-to-Power BI reporting workflows, reducing recurring manual reporting effort by 30%.
+* Resolved data and reporting issues across multiple source systems, transformations and dashboards, restoring reliable business reporting.
 
 <div align="center">
-  <h2>🎓 Education</h2>
+  <h2>Education</h2>
 </div>
 
-**M.S. Computer Science — New York Institute of Technology**
+**Master of Science in Computer Science — New York Institute of Technology**<br />
 *2022 – 2024 · With Distinction*
 
-**M.S. IT & Computer Applications — Gujarat University**
+**Master of Science in IT & Computer Applications — Gujarat University**<br />
 *2020 – 2022 · With Distinction*
 
-**B.S. IT & Computer Applications — Gujarat University**
+**Bachelor of Science in IT & Computer Applications — Gujarat University**<br />
 *2017 – 2020 · With Distinction*
 
 ---
 
-
 <div align="center">
 
-<i>Building practical intelligence from data, one system at a time.</i>
+<i>Building reliable AI integrations and practical data systems.</i>
 
 </div>
